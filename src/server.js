@@ -1,30 +1,28 @@
-import express from "express";
-import dotenv, { configDotenv } from "dotenv";
-import mustache from "mustache-express";
-import path from "path";
-
-import { dirname } from 'path';
+import express from 'express';
+import path from 'path';
 import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { dirname } from 'path';
+import bodyParser from 'body-parser';
 
-dotenv.config();   
-
-import MainRoutes from './router/router.js';
-
-
+import mustacheExpress from 'mustache-express';
+import {config} from 'dotenv';
+import MainRoutes from './routes/routes.js'
 
 
-const server = express();
-server.set("view engine", "mustache"); // criação de template
-server.set("views", path.join(__dirname, "views"));
-server.engine("mustache", mustache());
-server.use(express.static(path.join(__dirname, "../public")));
+const _dotenv = config();
+const app = express();
 
-server.use(MainRoutes);
-server.use((req, res)=>{
-    res.render('pages/404');
-});
+const __dirname = dirname(fileURLToPath(import.meta.url))
+app.use(express.static(path.join(__dirname, '../public')));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
 
-server.listen(process.env.PORT);
+app.engine('mustache', mustacheExpress())
+app.set('view engine', 'mustache');
+app.set('views', path.join(__dirname, "views"))
+
+app.use(MainRoutes)
+
+const porta = process.env.PORT || 10
+app.listen(porta)

@@ -1,0 +1,56 @@
+@import '@fontsource/roboto';
+
+body{
+    background-color: rgb(180, 234, 241);
+    font-family: 'roboto', sans-serif;
+}
+
+fieldset{
+    width:50%;
+    background-color: rgb(255, 255, 255);
+    margin:0 auto;
+    border: none;
+    padding: 10px;
+
+    border-radius: 5px;
+
+    font-size: 1.5rem;
+
+}
+fieldset legend{
+    color: #5a5a5a;
+    font-weight: bold;
+}
+input{
+ border: none;
+ outline: none;
+}
+#input{
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    border: transparent;
+
+    padding: 2px;
+    border-radius: 4px;
+    color: rgb(78, 78, 78);
+}
+#input::placeholder{
+    color:silver;
+
+}
+
+#text-error{
+    background-color: #e61a1a;
+    color: #ffffff;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#text-sucesso{
+    background-color: rgb(0, 179, 30);
+    color: #ffffff;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

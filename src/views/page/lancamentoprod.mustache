@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./upload/logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/lancamentoprod.css">
+    <title>Super dog</title>
+</head>
+<body>
+<fieldset>
+
+    <legend>Cadastrar Produto</legend>
+    <form method="POST" action="/novoitem">
+        <input type="text" id="input" name="nome" placeholder="Digite um nome" /><br/><br/>
+
+        <input type="text" id="input" name="preco" placeholder="Digite uma preco" /><br/><br/>
+        <input type="submit" id="botao" value="Cadastrar Produto" />
+    </form>
+</fieldset>
+
+{{#erros}}
+    <div id="text-error">{{texto}}</div>
+{{/erros}}
+
+{{#cad}}
+   <div id="text-sucesso"> {{cadText}}</div>
+{{/cad}}
+</body>
+</html>
