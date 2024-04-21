@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon js,mustache src/server.js",
-    "vercel-build": "npx sequelize migrate deploy"
+    "vercel-build": "npx sequelize-cli db:migrat"
   },
   "keywords": [],
   "author": "",
