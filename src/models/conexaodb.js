@@ -15,3 +15,4 @@ const sequelize = new Sequelize(name, user , pass, {
 
 
 export default sequelize;
+
