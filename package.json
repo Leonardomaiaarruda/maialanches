@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon js,mustache src/server.js",
-    "vercel-build": "npx sequelize-cli db:migrat"
+    "start": "npx nodemon css,js,mustache src/server.js"
   },
   "keywords": [],
   "author": "",

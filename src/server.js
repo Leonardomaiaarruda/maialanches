@@ -24,5 +24,5 @@ app.set('views', path.join(__dirname, "views"))
 
 app.use(MainRoutes)
 
-const porta = process.env.PORT || 10
+const porta = process.env.PORT
 app.listen(10)

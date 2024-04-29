@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/deletar.css">
+</head>
+<body>
+<div id="menubutton">
+    <a href="http://localhost:10/cadastrodeproduto"><button id="newprod">Cadastrar produto</button></a>
+    <a href="http://localhost:10/editar"><button id="editprod">Editar produto</button></a>
+     <a href="http://localhost:10/deletar"><button id="deleteprod">Excluir produto</button></a>
+</div>
+
+<fieldset>
+
+    <h2>Deletar Produto</h2>
+    <form method="POST" action="/newprod">
+        <input type="text" id="input" name="nome" placeholder="Digite o nome do produto" autofocus /><br/><br/>
+        <input type="text" id="input" name="preco" placeholder="Digite uma preco ex:10.99" /><br/><br/>
+         <input type="text" id="input" name="desc_prod" placeholder="Descrição do produto" /><br/><br/>
+        <input type="submit" id="botao" value="Cadastrar Produto" />
+    </form>
+</fieldset>
+
+{{#erros}}
+    <div id="text-error">{{texto}}</div>
+{{/erros}}
+
+{{#cad}}
+   <div id="text-sucesso"> {{cadText}}</div>
+{{/cad}}
+</body>
+</html>

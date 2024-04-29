@@ -13,6 +13,10 @@ const Produto = sequelize.define('Produto', {
       type: DataTypes.DECIMAL(10, 3),
       allowNull: false
     },
+    desc_prod:{
+      type:DataTypes.STRING,
+      allowNull: false
+    }
 },  {
       tableName: 'produto',
       timestamps: false

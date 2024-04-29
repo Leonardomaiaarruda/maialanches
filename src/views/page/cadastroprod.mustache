@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./upload/logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/cadastrar.css">
+    <title>Super dog</title>
+</head>
+<body>
+<div id="menubutton">
+    <a href="http://localhost:10/cadastrodeproduto"><button id="newprod">Cadastrar produto</button></a>
+    <a href="http://localhost:10/editar"><button id="editprod">Editar produto</button></a>
+     <a href="http://localhost:10/deletar"><button id="deleteprod">Excluir produto</button></a>
+</div>
+
+<fieldset>
+
+    <h2>Cadastrar Produto</h2>
+    <form method="POST" action="/newprod" id='form'>
+        <label id="labelnome">Preencer o campo com apenas letras</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" autofocus required /><br/><br/>
+
+        <label id="labelpreco">Preencher o campo com apenas numeros</label>
+        <input type="number" step="0.01" id="preco" name="preco" placeholder="Digite uma preco ex:10.99" required /><br/><br/>
+
+         <label id="labeldesc">tem que haver a descrição do produto</label>
+         <input type="text" id="desc" name="desc_prod" placeholder="Descrição do produto" required /><br/><br/>
+
+        <input type="submit" id="botao" value="Cadastrar Produto" />
+    </form>
+</fieldset>
+
+{{#erros}}
+    <div id="text-error">{{texto}}</div>
+{{/erros}}
+
+{{#cad}}
+   <div id="text-sucesso"> {{cadText}}</div>
+{{/cad}}
+
+<script src="./js/script.js"></script>
+</body>
+</html>
